@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    container_name: ai-recruit-backend
+    ports:
+      - '8000:8000'
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./backend/recruit.db:/app/recruit.db
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ai-recruit-frontend
+    ports:
+      - '4173:80'
+    depends_on:
+      - backend
+    restart: always

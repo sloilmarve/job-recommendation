@@ -1,0 +1,15 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+__pypackages__
+*.env
+recruit.db
+node_modules
+frontend/node_modules
+frontend/dist
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
